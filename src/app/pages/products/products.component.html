@@ -1,70 +1,4 @@
 
-  <!--<section class="ae-container-fluid ae-container-fluid--inner rk-portfolio" *ngFor="let p of products |async">
-    <div class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
-      <a routerLink="/productPage" class="rk-item ae-masonry__item"><img src="assets/img/project-1.jpg" alt="">
-        <div class="item-meta">
-          <h2>Essential Stationery</h2>
-          <p>Branding</p>
-        </div></a><a href="portfolio-item.html" class="rk-item ae-masonry__item"><img src="assets/img/project-2.jpg" alt="">
-        <div class="item-meta">
-          <h2>Pickled Tousled</h2>
-          <p>Art Direction</p>
-        </div></a><a href="portfolio-item.html" class="rk-item ae-masonry__item"><img src="assets/img/project-3.jpg" alt="">
-        <div class="item-meta">
-          <h2>Waistcoat vegan</h2>
-          <p>Graphic Design</p>
-        </div></a><a href="portfolio-item.html" class="rk-item ae-masonry__item"><img src="assets/img/project-4.jpg" alt="">
-        <div class="item-meta">
-          <h2>Tumblr hammock</h2>
-          <p>Packaging</p>
-        </div></a><a href="portfolio-item.html" class="rk-item ae-masonry__item"><img src="assets/img/project-5.jpg" alt="">
-        <div class="item-meta">
-          <h2>Biodiesel etsy</h2>
-          <p>Branding</p>
-        </div></a><a href="portfolio-item.html" class="rk-item ae-masonry__item"><img src="assets/img/project-6.jpg" alt="">
-        <div class="item-meta">
-          <h2>Gentrify artisan</h2>
-          <p>Graphic Design</p>
-        </div></a><a href="portfolio-item.html" class="rk-item ae-masonry__item"><img src="assets/img/project-7.jpg" alt="">
-        <div class="item-meta">
-          <h2>Plaid austin</h2>
-          <p>Graphic Design</p>
-        </div></a><a href="portfolio-item.html" class="rk-item ae-masonry__item"><img src="assets/img/project-8.jpg" alt="">
-        <div class="item-meta">
-          <h2>Trust fund</h2>
-          <p>Packaging</p>
-        </div></a><a href="portfolio-item.html" class="rk-item ae-masonry__item"><img src="assets/img/project-9.jpg" alt="">
-        <div class="item-meta">
-          <h2>Gentrify pork</h2>
-          <p>Branding</p>
-        </div></a><a href="portfolio-item.html" class="rk-item ae-masonry__item"><img src="assets/img/project-10.jpg" alt="">
-        <div class="item-meta">
-          <h2>Waistcoat ugh</h2>
-          <p>UI/UX</p>
-        </div></a><a href="portfolio-item.html" class="rk-item ae-masonry__item"><img src="assets/img/project-11.jpg" alt="">
-        <div class="item-meta">
-          <h2>Deep v kogi</h2>
-          <p>Graphic Design</p>
-        </div></a><a href="portfolio-item.html" class="rk-item ae-masonry__item"><img src="assets/img/project-12.jpg" alt="">
-        <div class="item-meta">
-          <h2>Venmo trust</h2>
-          <p>Packaging</p>
-        </div></a><a href="portfolio-item.html" class="rk-item ae-masonry__item"><img src="assets/img/project-13.jpg" alt="">
-        <div class="item-meta">
-          <h2>Venmo trust</h2>
-          <p>Ui/UX</p>
-        </div></a>
-    </div>
-  </section>-->
-<div class="bar">
-  <p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)"></p-autoComplete>
-</div>
-<br>
-<br>
-<br>
-
-
-
   <div class="add-button">
     <p-speedDial (click)="displayProductForm = true" ></p-speedDial>
   </div>
@@ -82,7 +16,7 @@
           <a [href]="p.link" target="_blank">Ir al sitio web</a>
           <button pButton class="p-button-like" icon="pi pi-thumbs-up" (click)="addLike(p)" ></button>
           {{p.like}}
-
+          <button pButton class="p-button-trash" icon="pi pi-trash" (click)="deleteProduct(p.productId)"></button>
 
 
         </ng-template>

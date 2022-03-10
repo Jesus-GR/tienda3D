@@ -11,12 +11,12 @@ export class ProductsService {
   constructor(private firestore:Firestore) { }
 
   public async addProduct(product: Product) {
-    await addDoc(collection(this.firestore, 'items'), product);
+    await addDoc(collection(this.firestore, 'products'), product);
   }
 
   public getProducts(): Observable<Product[]> {
-    return collectionData(collection(this.firestore, 'items'), {
-      idField: 'itemId',
+    return collectionData(collection(this.firestore, 'products'), {
+      idField: 'productId',
     }) as Observable<Product[]>;
   }
 

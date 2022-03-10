@@ -17,7 +17,6 @@ import {AccordionModule} from 'primeng/accordion';     //accordion and accordion
 import {MenuItem} from 'primeng/api';                  //api
 import {DataViewModule} from 'primeng/dataview';
 import { AboutComponent } from './pages/about/about.component';
-import { ProductPageComponent } from './pages/product-page/product-page.component';
 import {CardModule} from 'primeng/card';
 import {ButtonModule} from 'primeng/button';
 import {DialogModule} from 'primeng/dialog';
@@ -26,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {InputTextModule} from 'primeng/inputtext';
 import {AutoCompleteModule} from 'primeng/autocomplete';
+import {ChartModule} from 'primeng/chart';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +33,6 @@ import {AutoCompleteModule} from 'primeng/autocomplete';
     FooterComponent,
     ProductsComponent,
     AboutComponent,
-    ProductPageComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +50,8 @@ import {AutoCompleteModule} from 'primeng/autocomplete';
     ReactiveFormsModule,
     InputTextModule,
     BrowserAnimationsModule,
-    AutoCompleteModule
+    AutoCompleteModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
