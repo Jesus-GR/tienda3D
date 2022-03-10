@@ -1,6 +1,7 @@
 
-  <section class="ae-container-fluid ae-container-fluid--inner rk-portfolio">
-    <div class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4"><a href="portfolio-item.html" class="rk-item ae-masonry__item"><img src="assets/img/project-1.jpg" alt="">
+  <!--<section class="ae-container-fluid ae-container-fluid--inner rk-portfolio" *ngFor="let p of products |async">
+    <div class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
+      <a routerLink="/productPage" class="rk-item ae-masonry__item"><img src="assets/img/project-1.jpg" alt="">
         <div class="item-meta">
           <h2>Essential Stationery</h2>
           <p>Branding</p>
@@ -54,4 +55,72 @@
           <p>Ui/UX</p>
         </div></a>
     </div>
-  </section>
+  </section>-->
+<div class="bar">
+  <p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)"></p-autoComplete>
+</div>
+<br>
+<br>
+<br>
+
+
+
+  <div class="add-button">
+    <p-speedDial (click)="displayProductForm = true" ></p-speedDial>
+  </div>
+
+  <link rel="stylesheet" href="https://unpkg.com/primeflex@3.1.0/primeflex.css">
+
+  <p-dataView [value]="(products|async)!" [paginator]="true" [rows]="8">
+    <ng-template let-p pTemplate="listItem">
+      <p-card class="card" [style]="{width: '360px'}" >
+        <ng-template pTemplate="header">
+            <img class="imageCard" alt="Card" [src]="p.imageUrl">
+        </ng-template>
+        <ng-template class="footer" pTemplate="footer">
+         <h4> <strong>{{p.title}}</strong></h4>
+          <a [href]="p.link" target="_blank">Ir al sitio web</a>
+          <button pButton class="p-button-like" icon="pi pi-thumbs-up" (click)="addLike(p)" ></button>
+          {{p.like}}
+
+
+
+        </ng-template>
+
+    </p-card>
+    </ng-template>
+</p-dataView>
+
+
+
+<!--Form dialog-->
+<p-dialog [(visible)]="displayProductForm" [style]="{width :'40vw'}">
+  <ng-template pTemplate="header">
+      </ng-template>
+      <form [formGroup]="productForm" (ngSubmit)="formSubmit()">
+
+      <label for="title">Title: </label>
+      <input pInputText id="title" type="text" formControlName="title">
+      <br>
+
+      <label for="imageUrl">Picture: </label>
+      <input pInputText id="imageUrl" type="text" formControlName="imageUrl">
+      <br>
+
+      <label for="link">Download: </label>
+      <input pInputText id="link" type="text" formControlName="link">
+      <br>
+
+      <p-button type="submit"
+      styleClass="p-button-success">Añadir</p-button>
+
+    </form>
+    <p-footer>
+      <p-button (click)="displayProductForm = false"
+        styleClass="p-button-danger">
+        Cancel
+      </p-button>
+
+    </p-footer>
+  </p-dialog>
+

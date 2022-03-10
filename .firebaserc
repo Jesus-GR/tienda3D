@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "todo3d-8d34c": {
+      "hosting": {
+        "tienda3D": [
+          "todo3d-8d34c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "todo3d-8d34c"
+  }
+}
