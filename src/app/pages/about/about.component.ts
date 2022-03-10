@@ -41,7 +41,7 @@ export class AboutComponent implements OnInit {
       datasets: [
           {
               label: 'Likes',
-              backgroundColor: '#42A5F5',
+              backgroundColor: '#DAD7D6',
               data: this.arrayDatos
           }
       ]
@@ -53,7 +53,7 @@ export class AboutComponent implements OnInit {
         plugins: {
             legend: {
                 labels: {
-                    color: '#495057'
+                    color: '#DAD7D6'
                 }
             }
         },
